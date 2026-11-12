@@ -1,0 +1,8 @@
+wavelength: 0.532 # μm
+camera_pixel_size: 6.5 # μm
+n_medium: 1.33
+magnification: 138.8889 #49.9515
+angle_num: 240
+NA: 1.33
+angle_downsample: 0
+conjugate_flag: -1

@@ -1,0 +1,6 @@
+model_dir: ./models/3_cells_iteration_230000ema.pt
+model_name: 3_cells_random_230000ema
+num_inference: 1000
+image_size: 256
+resample_interval: 40
+resample_time: 20

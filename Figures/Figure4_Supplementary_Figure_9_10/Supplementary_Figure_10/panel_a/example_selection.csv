@@ -1,0 +1,7 @@
+track_id,motion_group,original_example,selection_rule
+56,diffusing,True,original example
+143,diffusing,True,original example
+54,directional,True,original example
+94,directional,False,reference-speed quartile replacement
+14,confined,True,original example
+8,confined,True,original example

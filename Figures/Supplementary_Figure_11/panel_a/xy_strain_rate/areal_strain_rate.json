@@ -1,0 +1,12 @@
+{
+  "method": "unweighted affine ordinary least squares",
+  "definition": "+fps*trace(B); expansion positive, contraction negative",
+  "fps": 32.5,
+  "row_column_components": [
+    1,
+    2
+  ],
+  "all_mask_pixels": true,
+  "smoothing": false,
+  "plotting": false
+}

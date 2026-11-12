@@ -1,0 +1,503 @@
+{
+  "contract": {
+    "sources": [
+      {
+        "path": "/data3/rsc/odt_solver/DEPICT/Figures/Supplementary_Figure_11/panel_b/xy_masks.npz",
+        "bytes": 769879,
+        "mtime_ns": 1794148353798226059
+      },
+      {
+        "path": "/data3/rsc/odt_solver/helper/20260927_figures/supp_no_drug_nvrm/analysi/flow3d/flow3d_global_regions_w20s5_z0-255_pairs111-189_iso10_kalman_only_dense/flow3d_frame111-112.npy",
+        "bytes": 768000128,
+        "mtime_ns": 1793940776164595385
+      },
+      {
+        "path": "/data3/rsc/odt_solver/helper/20260927_figures/supp_no_drug_nvrm/analysi/flow3d/flow3d_global_regions_w20s5_z0-255_pairs111-189_iso10_kalman_only_dense/flow3d_frame112-113.npy",
+        "bytes": 768000128,
+        "mtime_ns": 1793940781331430480
+      },
+      {
+        "path": "/data3/rsc/odt_solver/helper/20260927_figures/supp_no_drug_nvrm/analysi/flow3d/flow3d_global_regions_w20s5_z0-255_pairs111-189_iso10_kalman_only_dense/flow3d_frame113-114.npy",
+        "bytes": 768000128,
+        "mtime_ns": 1793940781330430512
+      },
+      {
+        "path": "/data3/rsc/odt_solver/helper/20260927_figures/supp_no_drug_nvrm/analysi/flow3d/flow3d_global_regions_w20s5_z0-255_pairs111-189_iso10_kalman_only_dense/flow3d_frame114-115.npy",
+        "bytes": 768000128,
+        "mtime_ns": 1793940782015408657
+      },
+      {
+        "path": "/data3/rsc/odt_solver/helper/20260927_figures/supp_no_drug_nvrm/analysi/flow3d/flow3d_global_regions_w20s5_z0-255_pairs111-189_iso10_kalman_only_dense/flow3d_frame115-116.npy",
+        "bytes": 768000128,
+        "mtime_ns": 1793940779950474544
+      },
+      {
+        "path": "/data3/rsc/odt_solver/helper/20260927_figures/supp_no_drug_nvrm/analysi/flow3d/flow3d_global_regions_w20s5_z0-255_pairs111-189_iso10_kalman_only_dense/flow3d_frame116-117.npy",
+        "bytes": 768000128,
+        "mtime_ns": 1793940780607453580
+      },
+      {
+        "path": "/data3/rsc/odt_solver/helper/20260927_figures/supp_no_drug_nvrm/analysi/flow3d/flow3d_global_regions_w20s5_z0-255_pairs111-189_iso10_kalman_only_dense/flow3d_frame117-118.npy",
+        "bytes": 768000128,
+        "mtime_ns": 1793940779951474512
+      },
+      {
+        "path": "/data3/rsc/odt_solver/helper/20260927_figures/supp_no_drug_nvrm/analysi/flow3d/flow3d_global_regions_w20s5_z0-255_pairs111-189_iso10_kalman_only_dense/flow3d_frame118-119.npy",
+        "bytes": 768000128,
+        "mtime_ns": 1793940779972473842
+      },
+      {
+        "path": "/data3/rsc/odt_solver/helper/20260927_figures/supp_no_drug_nvrm/analysi/flow3d/flow3d_global_regions_w20s5_z0-255_pairs111-189_iso10_kalman_only_dense/flow3d_frame119-120.npy",
+        "bytes": 768000128,
+        "mtime_ns": 1793940796566944829
+      },
+      {
+        "path": "/data3/rsc/odt_solver/helper/20260927_figures/supp_no_drug_nvrm/analysi/flow3d/flow3d_global_regions_w20s5_z0-255_pairs111-189_iso10_kalman_only_dense/flow3d_frame120-121.npy",
+        "bytes": 768000128,
+        "mtime_ns": 1793940805146671732
+      },
+      {
+        "path": "/data3/rsc/odt_solver/helper/20260927_figures/supp_no_drug_nvrm/analysi/flow3d/flow3d_global_regions_w20s5_z0-255_pairs111-189_iso10_kalman_only_dense/flow3d_frame121-122.npy",
+        "bytes": 768000128,
+        "mtime_ns": 1793940805470661425
+      },
+      {
+        "path": "/data3/rsc/odt_solver/helper/20260927_figures/supp_no_drug_nvrm/analysi/flow3d/flow3d_global_regions_w20s5_z0-255_pairs111-189_iso10_kalman_only_dense/flow3d_frame122-123.npy",
+        "bytes": 768000128,
+        "mtime_ns": 1793940808016580444
+      },
+      {
+        "path": "/data3/rsc/odt_solver/helper/20260927_figures/supp_no_drug_nvrm/analysi/flow3d/flow3d_global_regions_w20s5_z0-255_pairs111-189_iso10_kalman_only_dense/flow3d_frame123-124.npy",
+        "bytes": 768000128,
+        "mtime_ns": 1793940802451757483
+      },
+      {
+        "path": "/data3/rsc/odt_solver/helper/20260927_figures/supp_no_drug_nvrm/analysi/flow3d/flow3d_global_regions_w20s5_z0-255_pairs111-189_iso10_kalman_only_dense/flow3d_frame124-125.npy",
+        "bytes": 768000128,
+        "mtime_ns": 1793940803590721239
+      },
+      {
+        "path": "/data3/rsc/odt_solver/helper/20260927_figures/supp_no_drug_nvrm/analysi/flow3d/flow3d_global_regions_w20s5_z0-255_pairs111-189_iso10_kalman_only_dense/flow3d_frame125-126.npy",
+        "bytes": 768000128,
+        "mtime_ns": 1793940801034802580
+      },
+      {
+        "path": "/data3/rsc/odt_solver/helper/20260927_figures/supp_no_drug_nvrm/analysi/flow3d/flow3d_global_regions_w20s5_z0-255_pairs111-189_iso10_kalman_only_dense/flow3d_frame126-127.npy",
+        "bytes": 768000128,
+        "mtime_ns": 1793940800374823588
+      },
+      {
+        "path": "/data3/rsc/odt_solver/helper/20260927_figures/supp_no_drug_nvrm/analysi/flow3d/flow3d_global_regions_w20s5_z0-255_pairs111-189_iso10_kalman_only_dense/flow3d_frame127-128.npy",
+        "bytes": 768000128,
+        "mtime_ns": 1793940813988390586
+      },
+      {
+        "path": "/data3/rsc/odt_solver/helper/20260927_figures/supp_no_drug_nvrm/analysi/flow3d/flow3d_global_regions_w20s5_z0-255_pairs111-189_iso10_kalman_only_dense/flow3d_frame128-129.npy",
+        "bytes": 768000128,
+        "mtime_ns": 1793940822091133191
+      },
+      {
+        "path": "/data3/rsc/odt_solver/helper/20260927_figures/supp_no_drug_nvrm/analysi/flow3d/flow3d_global_regions_w20s5_z0-255_pairs111-189_iso10_kalman_only_dense/flow3d_frame129-130.npy",
+        "bytes": 768000128,
+        "mtime_ns": 1793940823933074712
+      },
+      {
+        "path": "/data3/rsc/odt_solver/helper/20260927_figures/supp_no_drug_nvrm/analysi/flow3d/flow3d_global_regions_w20s5_z0-255_pairs111-189_iso10_kalman_only_dense/flow3d_frame130-131.npy",
+        "bytes": 768000128,
+        "mtime_ns": 1793940826027008249
+      },
+      {
+        "path": "/data3/rsc/odt_solver/helper/20260927_figures/supp_no_drug_nvrm/analysi/flow3d/flow3d_global_regions_w20s5_z0-255_pairs111-189_iso10_kalman_only_dense/flow3d_frame131-132.npy",
+        "bytes": 768000128,
+        "mtime_ns": 1793940818938233319
+      },
+      {
+        "path": "/data3/rsc/odt_solver/helper/20260927_figures/supp_no_drug_nvrm/analysi/flow3d/flow3d_global_regions_w20s5_z0-255_pairs111-189_iso10_kalman_only_dense/flow3d_frame132-133.npy",
+        "bytes": 768000128,
+        "mtime_ns": 1793940820875171802
+      },
+      {
+        "path": "/data3/rsc/odt_solver/helper/20260927_figures/supp_no_drug_nvrm/analysi/flow3d/flow3d_global_regions_w20s5_z0-255_pairs111-189_iso10_kalman_only_dense/flow3d_frame133-134.npy",
+        "bytes": 768000128,
+        "mtime_ns": 1793940816934296977
+      },
+      {
+        "path": "/data3/rsc/odt_solver/helper/20260927_figures/supp_no_drug_nvrm/analysi/flow3d/flow3d_global_regions_w20s5_z0-255_pairs111-189_iso10_kalman_only_dense/flow3d_frame134-135.npy",
+        "bytes": 768000128,
+        "mtime_ns": 1793940816662305619
+      },
+      {
+        "path": "/data3/rsc/odt_solver/helper/20260927_figures/supp_no_drug_nvrm/analysi/flow3d/flow3d_global_regions_w20s5_z0-255_pairs111-189_iso10_kalman_only_dense/flow3d_frame135-136.npy",
+        "bytes": 768000128,
+        "mtime_ns": 1793940830875854402
+      },
+      {
+        "path": "/data3/rsc/odt_solver/helper/20260927_figures/supp_no_drug_nvrm/analysi/flow3d/flow3d_global_regions_w20s5_z0-255_pairs111-189_iso10_kalman_only_dense/flow3d_frame136-137.npy",
+        "bytes": 768000128,
+        "mtime_ns": 1793940838421615153
+      },
+      {
+        "path": "/data3/rsc/odt_solver/helper/20260927_figures/supp_no_drug_nvrm/analysi/flow3d/flow3d_global_regions_w20s5_z0-255_pairs111-189_iso10_kalman_only_dense/flow3d_frame137-138.npy",
+        "bytes": 768000128,
+        "mtime_ns": 1793940841245525668
+      },
+      {
+        "path": "/data3/rsc/odt_solver/helper/20260927_figures/supp_no_drug_nvrm/analysi/flow3d/flow3d_global_regions_w20s5_z0-255_pairs111-189_iso10_kalman_only_dense/flow3d_frame138-139.npy",
+        "bytes": 768000128,
+        "mtime_ns": 1793940843847443243
+      },
+      {
+        "path": "/data3/rsc/odt_solver/helper/20260927_figures/supp_no_drug_nvrm/analysi/flow3d/flow3d_global_regions_w20s5_z0-255_pairs111-189_iso10_kalman_only_dense/flow3d_frame139-140.npy",
+        "bytes": 768000128,
+        "mtime_ns": 1793940835172718139
+      },
+      {
+        "path": "/data3/rsc/odt_solver/helper/20260927_figures/supp_no_drug_nvrm/analysi/flow3d/flow3d_global_regions_w20s5_z0-255_pairs111-189_iso10_kalman_only_dense/flow3d_frame140-141.npy",
+        "bytes": 768000128,
+        "mtime_ns": 1793940837660639272
+      },
+      {
+        "path": "/data3/rsc/odt_solver/helper/20260927_figures/supp_no_drug_nvrm/analysi/flow3d/flow3d_global_regions_w20s5_z0-255_pairs111-189_iso10_kalman_only_dense/flow3d_frame141-142.npy",
+        "bytes": 768000128,
+        "mtime_ns": 1793940833037785834
+      },
+      {
+        "path": "/data3/rsc/odt_solver/helper/20260927_figures/supp_no_drug_nvrm/analysi/flow3d/flow3d_global_regions_w20s5_z0-255_pairs111-189_iso10_kalman_only_dense/flow3d_frame142-143.npy",
+        "bytes": 768000128,
+        "mtime_ns": 1793940832525802071
+      },
+      {
+        "path": "/data3/rsc/odt_solver/helper/20260927_figures/supp_no_drug_nvrm/analysi/flow3d/flow3d_global_regions_w20s5_z0-255_pairs111-189_iso10_kalman_only_dense/flow3d_frame143-144.npy",
+        "bytes": 768000128,
+        "mtime_ns": 1793940846598356124
+      },
+      {
+        "path": "/data3/rsc/odt_solver/helper/20260927_figures/supp_no_drug_nvrm/analysi/flow3d/flow3d_global_regions_w20s5_z0-255_pairs111-189_iso10_kalman_only_dense/flow3d_frame144-145.npy",
+        "bytes": 768000128,
+        "mtime_ns": 1793940855665069173
+      },
+      {
+        "path": "/data3/rsc/odt_solver/helper/20260927_figures/supp_no_drug_nvrm/analysi/flow3d/flow3d_global_regions_w20s5_z0-255_pairs111-189_iso10_kalman_only_dense/flow3d_frame145-146.npy",
+        "bytes": 768000128,
+        "mtime_ns": 1793940862206862306
+      },
+      {
+        "path": "/data3/rsc/odt_solver/helper/20260927_figures/supp_no_drug_nvrm/analysi/flow3d/flow3d_global_regions_w20s5_z0-255_pairs111-189_iso10_kalman_only_dense/flow3d_frame146-147.npy",
+        "bytes": 768000128,
+        "mtime_ns": 1793940862712846312
+      },
+      {
+        "path": "/data3/rsc/odt_solver/helper/20260927_figures/supp_no_drug_nvrm/analysi/flow3d/flow3d_global_regions_w20s5_z0-255_pairs111-189_iso10_kalman_only_dense/flow3d_frame147-148.npy",
+        "bytes": 768000128,
+        "mtime_ns": 1793940852550167724
+      },
+      {
+        "path": "/data3/rsc/odt_solver/helper/20260927_figures/supp_no_drug_nvrm/analysi/flow3d/flow3d_global_regions_w20s5_z0-255_pairs111-189_iso10_kalman_only_dense/flow3d_frame148-149.npy",
+        "bytes": 768000128,
+        "mtime_ns": 1793940854057120042
+      },
+      {
+        "path": "/data3/rsc/odt_solver/helper/20260927_figures/supp_no_drug_nvrm/analysi/flow3d/flow3d_global_regions_w20s5_z0-255_pairs111-189_iso10_kalman_only_dense/flow3d_frame149-150.npy",
+        "bytes": 768000128,
+        "mtime_ns": 1793940848864284383
+      },
+      {
+        "path": "/data3/rsc/odt_solver/helper/20260927_figures/supp_no_drug_nvrm/analysi/flow3d/flow3d_global_regions_w20s5_z0-255_pairs111-189_iso10_kalman_only_dense/flow3d_frame150-151.npy",
+        "bytes": 768000128,
+        "mtime_ns": 1793940848310301921
+      },
+      {
+        "path": "/data3/rsc/odt_solver/helper/20260927_figures/supp_no_drug_nvrm/analysi/flow3d/flow3d_global_regions_w20s5_z0-255_pairs111-189_iso10_kalman_only_dense/flow3d_frame151-152.npy",
+        "bytes": 768000128,
+        "mtime_ns": 1793940868799653973
+      },
+      {
+        "path": "/data3/rsc/odt_solver/helper/20260927_figures/supp_no_drug_nvrm/analysi/flow3d/flow3d_global_regions_w20s5_z0-255_pairs111-189_iso10_kalman_only_dense/flow3d_frame152-153.npy",
+        "bytes": 768000128,
+        "mtime_ns": 1793940877636374957
+      },
+      {
+        "path": "/data3/rsc/odt_solver/helper/20260927_figures/supp_no_drug_nvrm/analysi/flow3d/flow3d_global_regions_w20s5_z0-255_pairs111-189_iso10_kalman_only_dense/flow3d_frame153-154.npy",
+        "bytes": 768000128,
+        "mtime_ns": 1793940884921145135
+      },
+      {
+        "path": "/data3/rsc/odt_solver/helper/20260927_figures/supp_no_drug_nvrm/analysi/flow3d/flow3d_global_regions_w20s5_z0-255_pairs111-189_iso10_kalman_only_dense/flow3d_frame154-155.npy",
+        "bytes": 768000128,
+        "mtime_ns": 1793940885016142139
+      },
+      {
+        "path": "/data3/rsc/odt_solver/helper/20260927_figures/supp_no_drug_nvrm/analysi/flow3d/flow3d_global_regions_w20s5_z0-255_pairs111-189_iso10_kalman_only_dense/flow3d_frame155-156.npy",
+        "bytes": 768000128,
+        "mtime_ns": 1793940870858588940
+      },
+      {
+        "path": "/data3/rsc/odt_solver/helper/20260927_figures/supp_no_drug_nvrm/analysi/flow3d/flow3d_global_regions_w20s5_z0-255_pairs111-189_iso10_kalman_only_dense/flow3d_frame156-157.npy",
+        "bytes": 768000128,
+        "mtime_ns": 1793940877636374957
+      },
+      {
+        "path": "/data3/rsc/odt_solver/helper/20260927_figures/supp_no_drug_nvrm/analysi/flow3d/flow3d_global_regions_w20s5_z0-255_pairs111-189_iso10_kalman_only_dense/flow3d_frame157-158.npy",
+        "bytes": 768000128,
+        "mtime_ns": 1793940869461633062
+      },
+      {
+        "path": "/data3/rsc/odt_solver/helper/20260927_figures/supp_no_drug_nvrm/analysi/flow3d/flow3d_global_regions_w20s5_z0-255_pairs111-189_iso10_kalman_only_dense/flow3d_frame158-159.npy",
+        "bytes": 768000128,
+        "mtime_ns": 1793940868798654005
+      },
+      {
+        "path": "/data3/rsc/odt_solver/helper/20260927_figures/supp_no_drug_nvrm/analysi/flow3d/flow3d_global_regions_w20s5_z0-255_pairs111-189_iso10_kalman_only_dense/flow3d_frame159-160.npy",
+        "bytes": 768000128,
+        "mtime_ns": 1793940886155106223
+      },
+      {
+        "path": "/data3/rsc/odt_solver/helper/20260927_figures/supp_no_drug_nvrm/analysi/flow3d/flow3d_global_regions_w20s5_z0-255_pairs111-189_iso10_kalman_only_dense/flow3d_frame160-161.npy",
+        "bytes": 768000128,
+        "mtime_ns": 1793940900008669690
+      },
+      {
+        "path": "/data3/rsc/odt_solver/helper/20260927_figures/supp_no_drug_nvrm/analysi/flow3d/flow3d_global_regions_w20s5_z0-255_pairs111-189_iso10_kalman_only_dense/flow3d_frame161-162.npy",
+        "bytes": 768000128,
+        "mtime_ns": 1793940906286472072
+      },
+      {
+        "path": "/data3/rsc/odt_solver/helper/20260927_figures/supp_no_drug_nvrm/analysi/flow3d/flow3d_global_regions_w20s5_z0-255_pairs111-189_iso10_kalman_only_dense/flow3d_frame162-163.npy",
+        "bytes": 768000128,
+        "mtime_ns": 1793940906868453758
+      },
+      {
+        "path": "/data3/rsc/odt_solver/helper/20260927_figures/supp_no_drug_nvrm/analysi/flow3d/flow3d_global_regions_w20s5_z0-255_pairs111-189_iso10_kalman_only_dense/flow3d_frame163-164.npy",
+        "bytes": 768000128,
+        "mtime_ns": 1793940890366973441
+      },
+      {
+        "path": "/data3/rsc/odt_solver/helper/20260927_figures/supp_no_drug_nvrm/analysi/flow3d/flow3d_global_regions_w20s5_z0-255_pairs111-189_iso10_kalman_only_dense/flow3d_frame164-165.npy",
+        "bytes": 768000128,
+        "mtime_ns": 1793940900007669721
+      },
+      {
+        "path": "/data3/rsc/odt_solver/helper/20260927_figures/supp_no_drug_nvrm/analysi/flow3d/flow3d_global_regions_w20s5_z0-255_pairs111-189_iso10_kalman_only_dense/flow3d_frame165-166.npy",
+        "bytes": 768000128,
+        "mtime_ns": 1793940888389035790
+      },
+      {
+        "path": "/data3/rsc/odt_solver/helper/20260927_figures/supp_no_drug_nvrm/analysi/flow3d/flow3d_global_regions_w20s5_z0-255_pairs111-189_iso10_kalman_only_dense/flow3d_frame166-167.npy",
+        "bytes": 768000128,
+        "mtime_ns": 1793940886315101178
+      },
+      {
+        "path": "/data3/rsc/odt_solver/helper/20260927_figures/supp_no_drug_nvrm/analysi/flow3d/flow3d_global_regions_w20s5_z0-255_pairs111-189_iso10_kalman_only_dense/flow3d_frame167-168.npy",
+        "bytes": 768000128,
+        "mtime_ns": 1793940905524496052
+      },
+      {
+        "path": "/data3/rsc/odt_solver/helper/20260927_figures/supp_no_drug_nvrm/analysi/flow3d/flow3d_global_regions_w20s5_z0-255_pairs111-189_iso10_kalman_only_dense/flow3d_frame168-169.npy",
+        "bytes": 768000128,
+        "mtime_ns": 1793940920466026160
+      },
+      {
+        "path": "/data3/rsc/odt_solver/helper/20260927_figures/supp_no_drug_nvrm/analysi/flow3d/flow3d_global_regions_w20s5_z0-255_pairs111-189_iso10_kalman_only_dense/flow3d_frame169-170.npy",
+        "bytes": 768000128,
+        "mtime_ns": 1793940924459900672
+      },
+      {
+        "path": "/data3/rsc/odt_solver/helper/20260927_figures/supp_no_drug_nvrm/analysi/flow3d/flow3d_global_regions_w20s5_z0-255_pairs111-189_iso10_kalman_only_dense/flow3d_frame170-171.npy",
+        "bytes": 768000128,
+        "mtime_ns": 1793940928674768292
+      },
+      {
+        "path": "/data3/rsc/odt_solver/helper/20260927_figures/supp_no_drug_nvrm/analysi/flow3d/flow3d_global_regions_w20s5_z0-255_pairs111-189_iso10_kalman_only_dense/flow3d_frame171-172.npy",
+        "bytes": 768000128,
+        "mtime_ns": 1793940908159413137
+      },
+      {
+        "path": "/data3/rsc/odt_solver/helper/20260927_figures/supp_no_drug_nvrm/analysi/flow3d/flow3d_global_regions_w20s5_z0-255_pairs111-189_iso10_kalman_only_dense/flow3d_frame172-173.npy",
+        "bytes": 768000128,
+        "mtime_ns": 1793940920467026128
+      },
+      {
+        "path": "/data3/rsc/odt_solver/helper/20260927_figures/supp_no_drug_nvrm/analysi/flow3d/flow3d_global_regions_w20s5_z0-255_pairs111-189_iso10_kalman_only_dense/flow3d_frame173-174.npy",
+        "bytes": 768000128,
+        "mtime_ns": 1793940906074478743
+      },
+      {
+        "path": "/data3/rsc/odt_solver/helper/20260927_figures/supp_no_drug_nvrm/analysi/flow3d/flow3d_global_regions_w20s5_z0-255_pairs111-189_iso10_kalman_only_dense/flow3d_frame174-175.npy",
+        "bytes": 768000128,
+        "mtime_ns": 1793940905524496052
+      },
+      {
+        "path": "/data3/rsc/odt_solver/helper/20260927_figures/supp_no_drug_nvrm/analysi/flow3d/flow3d_global_regions_w20s5_z0-255_pairs111-189_iso10_kalman_only_dense/flow3d_frame175-176.npy",
+        "bytes": 768000128,
+        "mtime_ns": 1793940923706924327
+      },
+      {
+        "path": "/data3/rsc/odt_solver/helper/20260927_figures/supp_no_drug_nvrm/analysi/flow3d/flow3d_global_regions_w20s5_z0-255_pairs111-189_iso10_kalman_only_dense/flow3d_frame176-177.npy",
+        "bytes": 768000128,
+        "mtime_ns": 1793940937353495877
+      },
+      {
+        "path": "/data3/rsc/odt_solver/helper/20260927_figures/supp_no_drug_nvrm/analysi/flow3d/flow3d_global_regions_w20s5_z0-255_pairs111-189_iso10_kalman_only_dense/flow3d_frame177-178.npy",
+        "bytes": 768000128,
+        "mtime_ns": 1793940941538364597
+      },
+      {
+        "path": "/data3/rsc/odt_solver/helper/20260927_figures/supp_no_drug_nvrm/analysi/flow3d/flow3d_global_regions_w20s5_z0-255_pairs111-189_iso10_kalman_only_dense/flow3d_frame178-179.npy",
+        "bytes": 768000128,
+        "mtime_ns": 1793940946298215341
+      },
+      {
+        "path": "/data3/rsc/odt_solver/helper/20260927_figures/supp_no_drug_nvrm/analysi/flow3d/flow3d_global_regions_w20s5_z0-255_pairs111-189_iso10_kalman_only_dense/flow3d_frame179-180.npy",
+        "bytes": 768000128,
+        "mtime_ns": 1793940928673768323
+      },
+      {
+        "path": "/data3/rsc/odt_solver/helper/20260927_figures/supp_no_drug_nvrm/analysi/flow3d/flow3d_global_regions_w20s5_z0-255_pairs111-189_iso10_kalman_only_dense/flow3d_frame180-181.npy",
+        "bytes": 768000128,
+        "mtime_ns": 1793940937590488441
+      },
+      {
+        "path": "/data3/rsc/odt_solver/helper/20260927_figures/supp_no_drug_nvrm/analysi/flow3d/flow3d_global_regions_w20s5_z0-255_pairs111-189_iso10_kalman_only_dense/flow3d_frame181-182.npy",
+        "bytes": 768000128,
+        "mtime_ns": 1793940923884918735
+      },
+      {
+        "path": "/data3/rsc/odt_solver/helper/20260927_figures/supp_no_drug_nvrm/analysi/flow3d/flow3d_global_regions_w20s5_z0-255_pairs111-189_iso10_kalman_only_dense/flow3d_frame182-183.npy",
+        "bytes": 768000128,
+        "mtime_ns": 1793940923631926683
+      },
+      {
+        "path": "/data3/rsc/odt_solver/helper/20260927_figures/supp_no_drug_nvrm/analysi/flow3d/flow3d_global_regions_w20s5_z0-255_pairs111-189_iso10_kalman_only_dense/flow3d_frame183-184.npy",
+        "bytes": 768000128,
+        "mtime_ns": 1793940940917384073
+      },
+      {
+        "path": "/data3/rsc/odt_solver/helper/20260927_figures/supp_no_drug_nvrm/analysi/flow3d/flow3d_global_regions_w20s5_z0-255_pairs111-189_iso10_kalman_only_dense/flow3d_frame184-185.npy",
+        "bytes": 768000128,
+        "mtime_ns": 1793940955818916991
+      },
+      {
+        "path": "/data3/rsc/odt_solver/helper/20260927_figures/supp_no_drug_nvrm/analysi/flow3d/flow3d_global_regions_w20s5_z0-255_pairs111-189_iso10_kalman_only_dense/flow3d_frame185-186.npy",
+        "bytes": 768000128,
+        "mtime_ns": 1793940966889570389
+      },
+      {
+        "path": "/data3/rsc/odt_solver/helper/20260927_figures/supp_no_drug_nvrm/analysi/flow3d/flow3d_global_regions_w20s5_z0-255_pairs111-189_iso10_kalman_only_dense/flow3d_frame186-187.npy",
+        "bytes": 768000128,
+        "mtime_ns": 1793940965793604687
+      },
+      {
+        "path": "/data3/rsc/odt_solver/helper/20260927_figures/supp_no_drug_nvrm/analysi/flow3d/flow3d_global_regions_w20s5_z0-255_pairs111-189_iso10_kalman_only_dense/flow3d_frame187-188.npy",
+        "bytes": 768000128,
+        "mtime_ns": 1793940945347245155
+      },
+      {
+        "path": "/data3/rsc/odt_solver/helper/20260927_figures/supp_no_drug_nvrm/analysi/flow3d/flow3d_global_regions_w20s5_z0-255_pairs111-189_iso10_kalman_only_dense/flow3d_frame188-189.npy",
+        "bytes": 768000128,
+        "mtime_ns": 1793940956294902081
+      },
+      {
+        "path": "/data3/rsc/odt_solver/helper/20260927_figures/supp_no_drug_nvrm/analysi/flow3d/flow3d_global_regions_w20s5_z0-255_pairs111-189_iso10_kalman_only_dense/flow3d_frame189-190.npy",
+        "bytes": 768000128,
+        "mtime_ns": 1793940940862385798
+      }
+    ],
+    "section": {
+      "name": "xy",
+      "plane": "xy",
+      "index": 150
+    },
+    "native_left_frames": [
+      111,
+      112,
+      113,
+      114,
+      115,
+      116,
+      117,
+      118,
+      119,
+      120,
+      121,
+      122,
+      123,
+      124,
+      125,
+      126,
+      127,
+      128,
+      129,
+      130,
+      131,
+      132,
+      133,
+      134,
+      135,
+      136,
+      137,
+      138,
+      139,
+      140,
+      141,
+      142,
+      143,
+      144,
+      145,
+      146,
+      147,
+      148,
+      149,
+      150,
+      151,
+      152,
+      153,
+      154,
+      155,
+      156,
+      157,
+      158,
+      159,
+      160,
+      161,
+      162,
+      163,
+      164,
+      165,
+      166,
+      167,
+      168,
+      169,
+      170,
+      171,
+      172,
+      173,
+      174,
+      175,
+      176,
+      177,
+      178,
+      179,
+      180,
+      181,
+      182,
+      183,
+      184,
+      185,
+      186,
+      187,
+      188,
+      189
+    ],
+    "fps": 32.5,
+    "voxel_um": 0.0900811958,
+    "time_origin": 111,
+    "implementation": {
+      "path": "/data3/rsc/odt_solver/DEPICT/postprocessing/flow_statistics.py",
+      "bytes": 1671,
+      "mtime_ns": 1794160780342714435
+    }
+  },
+  "definition": "norm(dz,dy,dx)*voxel_um*fps, then spatial p25/median/p75 within the fixed RI mask",
+  "smoothing": false,
+  "optical_flow_recomputed": false
+}

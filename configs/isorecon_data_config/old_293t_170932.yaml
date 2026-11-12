@@ -1,0 +1,18 @@
+expriment_name: ood_test
+data_path: ./complex_field/293t_commercial/241219
+data_name: ODT-532nm-sample-2024-12-19-17-09-32
+save_name: 293t
+parent_size: 1200
+# Preserve the legacy sampling factor: crop_size[0] / domain_size[-1] = 2.
+raw_size: 2400
+shift_idx: [139, -19]
+# 581 739 600
+crop_size: [1004,1004]
+spec_size: [502,502]
+domain_size: [502, 502, 502]
+batch_size: 10
+ROI: null
+crop_z: True
+region_z: 256
+bg_z: 93
+save_path: results

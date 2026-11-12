@@ -1,0 +1,7 @@
+panel,content,input,script,output
+a,HEK293T reconstruction with DEPICT (BPM),inputs/volumes/293t_bpm.tif,rebuild.py --panels a,panel_a/panel_a_with_text.svg
+b,HEK293T reconstruction with DEPICT (Rytov),inputs/volumes/293t_rytov.tif,rebuild.py --panels b,panel_b/panel_b_with_text.svg
+c,Line profiles of HEK293T,config.json: profile_volumes,rebuild.py --panels c,panel_c/panel_c_with_text.svg
+d,HeLa reconstruction with DEPICT (BPM),../shared_inputs/lipid_isotropy/volumes/hela_240.tif,rebuild.py --panels d,panel_d/panel_d_with_text.svg
+e,HeLa reconstruction with DEPICT (Rytov),inputs/volumes/hela_rytov.tif,rebuild.py --panels e,panel_e/panel_e_with_text.svg
+f,Line profiles of HeLa,config.json: profile_volumes,rebuild.py --panels f,panel_f/panel_f_with_text.svg

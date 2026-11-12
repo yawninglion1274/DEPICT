@@ -1,0 +1,18 @@
+expriment_name: ood_test
+data_path: ./complex_field/cos7_commercial/cos7_1111
+data_name: ODT-532nm-sample-2025-11-11-22-36-10
+save_name: cos7
+parent_size: 1200
+raw_size: 2400
+# GPFS snapshot used for Figure3; the local [241, 420] crop exceeds the field.
+shift_idx: [239, -117]
+crop_size: [1004, 1004]
+spec_size: [502, 502]
+domain_size: [502, 502, 502]
+batch_size: 10
+ROI: null
+crop_z: true
+region_z: 256
+bg_z: 93
+save_path: results
+phase_correction: 80.0

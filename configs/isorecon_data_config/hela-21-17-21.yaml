@@ -1,0 +1,16 @@
+expriment_name: ood_test
+data_path: ./complex_field/hela_commercial/hela_1
+data_name: ODT-532nm-sample-2025-10-31-21-17-21
+save_name: hela
+parent_size: 1200
+raw_size: 2400
+shift_idx: [325, -300]
+crop_size: [1004, 1004]
+spec_size: [502, 502]
+domain_size: [502, 502, 502]
+batch_size: 10
+ROI: null
+crop_z: true
+region_z: 256
+bg_z: 93
+save_path: results

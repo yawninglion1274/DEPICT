@@ -1,0 +1,3 @@
+role,path,row_selection
+shared panel input,../../analysis/tracks_by_resolution.csv,angle_group == 12
+shared panel input,../../analysis/motion_classification.csv,all applicable per-resolution rows

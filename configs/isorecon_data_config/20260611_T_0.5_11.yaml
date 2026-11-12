@@ -1,0 +1,16 @@
+expriment_name: fast_odt
+data_path: ./complex_field/T_cell/20260611_0p5_full1910
+data_name: sam11_1910
+save_name: 0611_T_0p5_256
+parent_size: 532
+raw_size: 1024
+shift_idx: [-15, 0]
+crop_size: [1004, 1004]
+spec_size: [500, 500]
+domain_size: [500, 500, 500]
+batch_size: 10
+ROI: null
+crop_z: true
+region_z: 256
+bg_z: 110
+save_path: results

@@ -1,0 +1,3 @@
+role,path,row_selection
+shared panel input,../analysis/track_mean_speeds.csv,all applicable per-resolution rows
+shared panel input,../analysis/motion_classification.csv,all applicable per-resolution rows

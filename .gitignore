@@ -1,0 +1,62 @@
+# Local inputs, run outputs and internal records.
+/manifest/
+/complex_field/
+/results/
+/log/
+/models/
+
+# Scientific arrays, checkpoints, figures and font binaries live outside Git.
+*.npy
+*.npz
+*.pt
+*.pth
+*.ckpt
+*.tif
+*.tiff
+*.h5
+*.hdf5
+*.zarr/
+*.png
+*.jpg
+*.jpeg
+*.pdf
+*.svg
+*.TTF
+*.ttf
+*.otf
+
+# Generated figure analyses and cache records.
+/Figures/**/analysis/
+/Figures/**/cache/
+/Figures/**/threshold_0p54_backup/
+*_manifest.json
+*_validation.json
+*validation_report.json
+threshold_comparison.*
+
+# Authentication and machine-specific configuration.
+server.txt
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*credentials*
+*token*
+
+# Python and editor artifacts.
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.cache/
+.venv*/
+venv/
+*.egg-info/
+build/
+dist/
+.DS_Store
+.idea/
+.vscode/
+*.log

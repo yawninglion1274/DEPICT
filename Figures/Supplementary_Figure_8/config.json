@@ -1,0 +1,162 @@
+{
+  "figure": "Supplementary_Figure_8",
+  "panels": [
+    {
+      "label": "a",
+      "kind": "image",
+      "cell": "293t",
+      "input": "inputs/volumes/293t_24.tif",
+      "display": {
+        "z_idx": null,
+        "y_idx": null,
+        "rotate_xy": false
+      },
+      "title": "HEK293T",
+      "scale_bar_um": 5
+    },
+    {
+      "label": "b",
+      "kind": "image",
+      "cell": "hela",
+      "input": "inputs/volumes/hela_24.tif",
+      "display": {
+        "z_idx": 144,
+        "y_idx": 235
+      },
+      "title": "HeLa",
+      "scale_bar_um": null
+    },
+    {
+      "label": "c",
+      "kind": "image",
+      "cell": "cos7",
+      "input": "inputs/volumes/cos7_24.tif",
+      "display": {
+        "z_idx": 148,
+        "y_idx": 301
+      },
+      "title": "COS-7",
+      "scale_bar_um": null
+    },
+    {
+      "label": "d",
+      "kind": "isotropy",
+      "cells": [
+        "293t",
+        "hela",
+        "cos7"
+      ],
+      "title": "In-distribution isotropy ratio"
+    },
+    {
+      "label": "e",
+      "kind": "image",
+      "cell": "u2os",
+      "input": "inputs/volumes/u2os_24.tif",
+      "display": {
+        "z_idx": 144,
+        "y_idx": 235
+      },
+      "title": "U2OS",
+      "scale_bar_um": null
+    },
+    {
+      "label": "f",
+      "kind": "image",
+      "cell": "tcell",
+      "input": "inputs/volumes/tcell_24.tif",
+      "display": {
+        "z_idx": 128,
+        "y_idx": 250,
+        "offset_tide": -0.0006,
+        "offset_bpm": -0.0006,
+        "swap_xy": true,
+        "flip_ud": true
+      },
+      "title": "Interphase T cell",
+      "scale_bar_um": null
+    },
+    {
+      "label": "g",
+      "kind": "image",
+      "cell": "tcell_mitosis",
+      "input": "inputs/volumes/tcell_mitosis_24.tif",
+      "display": {
+        "z_idx": 128,
+        "y_idx": 250,
+        "x_idx": 131,
+        "swap_xy": true
+      },
+      "title": "Mitotic T cell",
+      "scale_bar_um": null
+    },
+    {
+      "label": "h",
+      "kind": "isotropy",
+      "cells": [
+        "u2os",
+        "tcell",
+        "tcell_mitosis"
+      ],
+      "title": "Out-of-distribution isotropy ratio"
+    }
+  ],
+  "cell_names": {
+    "293t": "HEK293T",
+    "hela": "HeLa",
+    "cos7": "COS-7",
+    "u2os": "U2OS",
+    "tcell": "Interphase T cell",
+    "tcell_mitosis": "Mitotic T cell"
+  },
+  "reference_droplets": "inputs/lipid_isotropy/reference_droplets_240.csv",
+  "analysis_coordinates_24": "inputs/droplet_coordinates_24.csv",
+  "isotropy_volumes": {
+    "293t": {
+      "240": "inputs/lipid_isotropy/volumes/293t_240.tif",
+      "24": "inputs/volumes/293t_24.tif"
+    },
+    "hela": {
+      "240": "inputs/lipid_isotropy/volumes/hela_240.tif",
+      "24": "inputs/volumes/hela_24.tif"
+    },
+    "cos7": {
+      "240": "inputs/lipid_isotropy/volumes/cos7_240.tif",
+      "24": "inputs/volumes/cos7_24.tif"
+    },
+    "u2os": {
+      "240": "inputs/lipid_isotropy/volumes/u2os_240.tif",
+      "24": "inputs/volumes/u2os_24.tif"
+    },
+    "tcell": {
+      "240": "inputs/lipid_isotropy/volumes/tcell_240.tif",
+      "24": "inputs/volumes/tcell_24.tif"
+    },
+    "tcell_mitosis": {
+      "240": "inputs/lipid_isotropy/volumes/tcell_mitosis_240.tif",
+      "24": "inputs/volumes/tcell_mitosis_24.tif"
+    }
+  },
+  "fwhm_settings": {
+    "z_crop_start": 64,
+    "z_crop_stop": -64,
+    "voxel_size_um": 0.09,
+    "threshold": 0.12,
+    "connectivity": 1,
+    "min_voxels": 4,
+    "max_voxels": 2000,
+    "split_erosion_iters": 1,
+    "split_expand_distance": 2.0,
+    "centroid_mode": "geometric",
+    "profile_half_width_px": 16.0,
+    "profile_step_px": 0.25,
+    "profile_smooth_sigma_px": 1.0,
+    "peak_search_radius_px": 4.0,
+    "baseline_fraction": 0.2,
+    "min_profile_contrast": 0.01,
+    "max_fwhm_px": 28.0,
+    "max_component_fwhm_um": 0.0,
+    "max_component_max_min_ratio": 0.0
+  },
+  "lipid_reference_policy": "latest_complete_volumes_final_valid_coordinates_per_angle"
+}

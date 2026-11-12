@@ -1,0 +1,10 @@
+coef_type: sqrt
+init_type: rytov
+start_time: 999
+data_weight: 1
+resample_times: 3
+resample_start: 75
+resample_end: 0
+ave_start: 75
+lr: 0.002
+lambda_scale: 0.03
