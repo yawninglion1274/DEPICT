@@ -32,19 +32,19 @@ so the prior operates on the full reconstruction volume.
 
 ## Sample Settings
 
-Model `3` selects `configs/model_config/3_cells_230000ema.yaml`; model `4`
-selects `configs/model_config/4_cells_200000ema.yaml`. All jobs use Rytov
-initialization from the selected observations.
+All jobs use `configs/model_config/3_cells_230000ema.yaml`, which loads
+`models/3_cells_iteration_230000ema.pt`, and Rytov initialization from the
+selected observations.
 
 | Sample | Angles | Selection / `frame_idx` | Model | `lambda` | Step size | `ave_start` |
 | --- | ---: | --- | ---: | ---: | ---: | ---: |
-| 293t | 240 | all / 0 | 3 | 0.03 | 0.0018 | 75 |
+| 293t | 240 | all / 0 | 3 | 0.03 | 0.002 | 75 |
 | 293t | 24 | uniform / 0 | 3 | 0.02 | 0.002 | 100 |
-| hela | 240 | all / 0 | 4 | 0.03 | 0.0018 | 75 |
+| hela | 240 | all / 0 | 3 | 0.03 | 0.002 | 75 |
 | hela | 24 | uniform / 0 | 3 | 0.03 | 0.002 | 100 |
-| cos7 | 240 | all / 0 | 4 | 0.03 | 0.002 | 75 |
+| cos7 | 240 | all / 0 | 3 | 0.03 | 0.002 | 75 |
 | cos7 | 24 | uniform / 0 | 3 | 0.03 | 0.002 | 100 |
-| u2os | 240 | all / 0 | 4 | 0.03 | 0.002 | 75 |
+| u2os | 240 | all / 0 | 3 | 0.03 | 0.002 | 75 |
 | u2os | 24 | uniform / 5 | 3 | 0.03 | 0.002 | 100 |
 | tcell | 240 | contiguous / 0 | 3 | 0.015 | 0.0025 | 100 |
 | tcell | 24 | contiguous / 40 | 3 | 0.03 | 0.002 | 100 |

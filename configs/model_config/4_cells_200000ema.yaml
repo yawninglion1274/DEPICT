@@ -1,6 +1,0 @@
-model_dir: ./models/iteration_200000ema.pt
-model_name: 4_cells_random_200000ema
-num_inference: 1000
-image_size: 256
-resample_interval: 40
-resample_time: 20

@@ -33,12 +33,11 @@ Sample paths and selection rules are in [Reconstruction](reconstruction.md).
 
 ## Checkpoints
 
-The model YAMLs expect:
+All reconstructions use the 3-cell model checkpoint:
 
 ```text
 models/
   3_cells_iteration_230000ema.pt
-  iteration_200000ema.pt
 ```
 
 Checkpoints serialize Diffusers `UNet2DModel` objects. Use the PyTorch and

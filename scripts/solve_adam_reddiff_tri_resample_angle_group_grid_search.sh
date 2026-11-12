@@ -95,12 +95,6 @@ resolve_job() {
         reconstruction_config='configs/reconstruction_config/DiffPIR_FISTA/adam_RED_240.yaml'
         prior_batch_size=15
         bpm_batch_size=3
-        if [[ "$sample" != 293t ]]; then
-            model_config='configs/model_config/4_cells_200000ema.yaml'
-        fi
-        if [[ "$sample" == 293t || "$sample" == hela ]]; then
-            step_size='0.0018'
-        fi
     elif [[ "$sample" == 293t ]]; then
         lambda_scale='0.02'
     elif [[ "$sample" == u2os ]]; then
