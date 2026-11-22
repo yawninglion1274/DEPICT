@@ -5,9 +5,9 @@ save_name: hela
 parent_size: 1200
 raw_size: 2400
 shift_idx: [325, -300]
-crop_size: [1004, 1004]
-spec_size: [502, 502]
-domain_size: [502, 502, 502]
+crop_size: [1000, 1000]
+spec_size: [500, 500]
+domain_size: [500, 500, 500]
 batch_size: 10
 ROI: null
 crop_z: true

@@ -1,4 +1,4 @@
-coef_type: sqrt # type_2
+coef_type: sqrt
 init_type: rytov
 start_time: 999
 data_weight: 1

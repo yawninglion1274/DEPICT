@@ -4,11 +4,10 @@ data_name: ODT-532nm-sample-2025-11-11-22-36-10
 save_name: cos7
 parent_size: 1200
 raw_size: 2400
-# GPFS snapshot used for Figure3; the local [241, 420] crop exceeds the field.
 shift_idx: [239, -117]
-crop_size: [1004, 1004]
-spec_size: [502, 502]
-domain_size: [502, 502, 502]
+crop_size: [1000, 1000]
+spec_size: [500, 500]
+domain_size: [500, 500, 500]
 batch_size: 10
 ROI: null
 crop_z: true

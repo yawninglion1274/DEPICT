@@ -1,7 +1,0 @@
-angle_group,global_frame,observation_start,observation_stop,time_center_s,within_reference,within_common
-240,1,240,480,0.5846153846153846,True,True
-240,2,480,720,1.8153846153846156,True,True
-240,3,720,960,3.046153846153846,True,True
-240,4,960,1200,4.276923076923077,True,True
-240,5,1200,1440,5.507692307692308,True,True
-240,6,1440,1680,6.7384615384615385,True,True

@@ -1,4 +1,0 @@
-role,path,row_selection
-shared panel input,../../analysis/tracks_by_resolution.csv,all applicable per-resolution rows
-shared panel input,../../analysis/alpha_by_temporal_resolution.csv,all applicable per-resolution rows
-shared panel input,../../analysis/motion_classification.csv,all applicable per-resolution rows

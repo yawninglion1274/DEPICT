@@ -1,4 +1,0 @@
--r ../figure_reproduction/requirements.txt
-torch==2.6.0
-scikit-image==0.24.0
-imagecodecs==2024.12.30

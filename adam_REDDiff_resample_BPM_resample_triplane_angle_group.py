@@ -1,6 +1,5 @@
 import os
 import torch
-import diffusers
 from diffusers import DDPMScheduler
 import matplotlib.pyplot as plt
 import numpy as np
@@ -13,12 +12,11 @@ from utils.img_utils import plot_volume
 from src.bpm_grad import compute_bpm_grad, angular_spectrum_kernel
 from src.rytov_solver import RytovRec_for_bpm
 from torch import optim
-print(diffusers.__file__)
 device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 
 SAVE_FLAG = True
 
-def multi_sample_x0(model, xt, scheduler, batch_size, t, views):
+def multi_sample_x0(model, xt, scheduler, batch_size, t, views, generator=None):
     if batch_size <= 0:
         raise ValueError(f'batch_size must be positive, got {batch_size}')
 
@@ -29,13 +27,14 @@ def multi_sample_x0(model, xt, scheduler, batch_size, t, views):
         sub_imgs.append(xt[:, :, h_start:h_end, w_start:w_end])
     sub_imgs = torch.concat(sub_imgs, 0)
     sub_x_pred = []
-    # Split by the actual number of 2-D view patches. The old split used only
-    # xt.shape[0], so multiple ROI windows could silently multiply the model batch.
+    # Batch the complete set of 2-D view patches.
     for start in range(0, sub_imgs.shape[0], batch_size):
         batch_sub_imgs = sub_imgs[start:start + batch_size]
         timesteps = torch.tensor([t] * batch_sub_imgs.shape[0], device=xt.device)
         batch_sub_noise_pred = model(batch_sub_imgs, timesteps).sample
-        batch_sub_x_pred = scheduler.step(batch_sub_noise_pred, t, batch_sub_imgs).pred_original_sample
+        batch_sub_x_pred = scheduler.step(
+            batch_sub_noise_pred, t, batch_sub_imgs, generator=generator
+        ).pred_original_sample
         sub_x_pred.append(batch_sub_x_pred)
     sub_x_pred = torch.tensor_split(torch.concat(sub_x_pred, 0), len(views))
     for i, (h_start, h_end, w_start, w_end) in enumerate(views):
@@ -124,6 +123,7 @@ def posterior_sampling(
     roi=None,              # Compute the RED prior only in this ROI; None means the full volume
     start_time=999,
     save_timesteps=None,
+    seed=0,
 ):
     if not 0 <= start_time < len(scheduler.alphas_cumprod):
         raise ValueError(f'start_time={start_time} is outside the diffusion schedule')
@@ -155,6 +155,8 @@ def posterior_sampling(
         raise NotImplementedError(f"Unknown schedule: {lambda_scheduling_type}")
         
     mu = init_ri_x0.clone().detach().to(device)
+    # Advance one local RNG throughout the run, including scheduler variance draws.
+    generator = torch.Generator(device=mu.device).manual_seed(seed)
     mu.requires_grad_(True)
     roi_slices, roi_shape = make_roi_slices(roi, mu.shape)
     use_roi_prior = roi_slices is not None
@@ -210,7 +212,7 @@ def posterior_sampling(
             
             # Construct the noisy input required by RED-Diff.
             timesteps = torch.tensor([t] * x_0_fusion.shape[0], device=device)
-            noise = torch.randn_like(x_0_fusion)
+            noise = torch.empty_like(x_0_fusion).normal_(generator=generator)
             
             xt = scheduler.add_noise(x_0_fusion, noise, timesteps)
             
@@ -234,7 +236,9 @@ def posterior_sampling(
                             current_views = xy_views
                         
                         # 2. Network Prediction
-                        pred_temp = multi_sample_x0(model, noisy_volume, scheduler, batch_size, t, current_views)
+                        pred_temp = multi_sample_x0(
+                            model, noisy_volume, scheduler, batch_size, t, current_views, generator
+                        )
                         
                         # 3. Inverse permute
                         if direction_idx == 0:
@@ -268,7 +272,9 @@ def posterior_sampling(
                         count = 0
                         
                     # 2. Network Prediction
-                    x_0_pred_latent = multi_sample_x0(model, noisy_volume, scheduler, batch_size, t, current_views)
+                    x_0_pred_latent = multi_sample_x0(
+                        model, noisy_volume, scheduler, batch_size, t, current_views, generator
+                    )
 
                     # 3. Inverse Permute
                     if direction == 0:
@@ -691,9 +697,13 @@ if __name__ == '__main__':
                         help='Physical delta-RI TIFF(s), averaged without rescaling for initialization.')
     parser.add_argument('--start_time', type=int, default=None,
                         help='First diffusion timestep, inclusive. Required with --init_tif. '
-                             'Without this override the original t=999 behavior is preserved.')
+                             'Defaults to 999.')
     parser.add_argument('--output_dir', type=str, default=None,
-                        help='Explicit result directory, used by the restart launcher.')
+                        help='Explicit result directory.')
+    parser.add_argument('--seed', type=int, default=0,
+                        help='Random seed for the reconstruction noise sequence (default: 0).')
+    parser.add_argument('--seed_in_output_path', action='store_true',
+                        help='Append a seed subdirectory to the result path.')
     parser.add_argument('--require_cuda', action='store_true',
                         help='Fail if the selected GPU is unavailable instead of using the CPU.')
     parser.add_argument('--save_timesteps', nargs='+', type=int, default=None,
@@ -719,6 +729,11 @@ if __name__ == '__main__':
                              'posterior_sampling starts.')
 
     args = parser.parse_args()
+    if not 0 <= args.seed < 2**64:
+        parser.error('--seed must be in [0, 2**64)')
+    torch.backends.cudnn.benchmark = False
+    torch.backends.cudnn.deterministic = True
+    print(f'Reconstruction seed: {args.seed}')
     if args.require_cuda and device.type != 'cuda':
         parser.error('--require_cuda was set but the selected CUDA device is unavailable')
     if args.init_tif and args.start_time is None:
@@ -988,6 +1003,8 @@ if __name__ == '__main__':
                                     f'lambda{lambda_scale}_step_size{step_size}_recover_volume_with_ini_add_on{add_on}')
             if args.output_dir is not None:
                 save_pth = args.output_dir
+            if args.seed_in_output_path:
+                save_pth = os.path.join(save_pth, f'seed{args.seed}')
             if args.stop_before_reconstruction:
                 print('[PRE-RECON CHECK] Reached reconstruction loop entry.')
                 print(f'[PRE-RECON CHECK] Would save results to: {save_pth}')
@@ -1028,6 +1045,7 @@ if __name__ == '__main__':
                 roi=posterior_roi,
                 start_time=sampling_start_time,
                 save_timesteps=args.save_timesteps,
+                seed=args.seed,
             )
             print(save_pth)
             plot_volume((recover_volume), os.path.join(save_pth, f'iso.tif'), [1, 1, 1])

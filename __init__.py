@@ -1,1 +1,1 @@
-"""DEPICT analysis and figure reproduction."""
+"""DEPICT optical diffraction tomography reconstruction."""

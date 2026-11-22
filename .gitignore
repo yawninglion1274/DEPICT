@@ -1,11 +1,23 @@
-# Local inputs, run outputs and internal records.
-/manifest/
+# Local observations, model weights and reconstruction outputs.
 /complex_field/
+/models/
 /results/
 /log/
-/models/
+/logs/
+/zenodo_uploads/
+/src/pps_grad.py
 
-# Scientific arrays, checkpoints, figures and font binaries live outside Git.
+# Local analysis and experiment records.
+/manifest/
+/Figures/
+/figure_reproduction/
+/postprocessing/
+/DEPICT_local_archive/
+*_manifest.json
+*_validation.json
+*validation_report.json
+
+# Scientific data, checkpoints, images and download archives.
 *.npy
 *.npz
 *.pt
@@ -24,17 +36,16 @@
 *.TTF
 *.ttf
 *.otf
+*.tar
+*.tar.gz
+*.tgz
+*.zip
+*.partial
 
-# Generated figure analyses and cache records.
-/Figures/**/analysis/
-/Figures/**/cache/
-/Figures/**/threshold_0p54_backup/
-*_manifest.json
-*_validation.json
-*validation_report.json
-threshold_comparison.*
-
-# Authentication and machine-specific configuration.
+# Credentials and machine-local settings.
+/.agents/
+/.codex/
+/.aws/
 server.txt
 .env
 .env.*
@@ -44,7 +55,7 @@ server.txt
 *credentials*
 *token*
 
-# Python and editor artifacts.
+# Python, editor and build artifacts.
 __pycache__/
 *.py[cod]
 .pytest_cache/
@@ -60,3 +71,5 @@ dist/
 .idea/
 .vscode/
 *.log
+*.pid
+nohup.out

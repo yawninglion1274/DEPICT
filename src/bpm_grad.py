@@ -2,7 +2,7 @@ import torch
 
 
 def angular_spectrum_kernel(domain_size, spec_pixel_size, pixel_size, km):
-    kx = (torch.linspace((-domain_size[2] // 2+1), (domain_size[2] // 2 ), domain_size[2]) - 1) * spec_pixel_size
+    kx = (torch.linspace((-domain_size[1] // 2+1), (domain_size[1] // 2 ), domain_size[1]) - 1) * spec_pixel_size
     ky = (torch.linspace((-domain_size[2] // 2+1), (domain_size[2] // 2 ), domain_size[2]) - 1) * spec_pixel_size
     [Ky, Kx] = torch.meshgrid(ky, kx, indexing='ij')
     K2 = Kx**2 + Ky**2

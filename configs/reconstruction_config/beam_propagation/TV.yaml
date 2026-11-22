@@ -1,0 +1,13 @@
+step_size: 0.0005
+n_iter: 200
+tv_param: [5.0e-6, 50]
+value_range_param: [0.0, 100.0]
+sparse_param: [null]
+batch_size: 2
+initial_type: rytov
+init_name: rytov.tif
+initial_shift_idx: 0
+observations: 240
+frame_start: 0
+phase_correction: 0.0
+save_every: 30

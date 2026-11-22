@@ -1,16 +1,18 @@
 # DEPICT
 
-DEPICT reconstructs three-dimensional refractive-index volumes from optical
-wavefront measurements using a diffusion prior and a beam propagation forward
-model. The repository also includes figure reproduction, lipid-droplet motion
-analysis, and volumetric postprocessing with Kalman smoothing and 3D optical
-flow.
+This repository implements three reconstruction methods for optical diffraction
+tomography: **Rytov**, **TV-BPM**, and **DEPICT**. DEPICT combines a diffusion
+prior with a beam propagation forward model to reconstruct three-dimensional
+refractive-index distributions from optical wavefront measurements.
 
-## Installation
+Six example datasets and a pretrained model are provided on
+[Zenodo](https://doi.org/10.5281/zenodo.24165471) for reproducing the
+reconstructions and getting started with the code.
 
-Use Python 3.9. Run the commands below from the `DEPICT` directory. Keep that
-directory name when cloning: figure entry points import the `DEPICT` package
-from its parent directory.
+## 1. Installation
+
+Use Python 3.9 and a CUDA-capable NVIDIA GPU. Run the following commands from
+the repository root:
 
 ```bash
 conda create -n depict python=3.9
@@ -18,110 +20,168 @@ conda activate depict
 python -m pip install -r requirements.txt
 ```
 
-Reconstruction requires a CUDA-capable GPU. The launcher can validate input
-paths and array headers without a GPU, and its preprocessing check runs on
-the CPU. Install volume-figure and postprocessing dependencies when needed:
+## 2. Example Data And Model
+
+Create the local directories for the model weights, observations, and outputs.
+These contents are not included in the GitHub repository:
 
 ```bash
-python -m pip install -r requirements-figures.txt
+mkdir -p models complex_field results
 ```
 
-Figure 4 and Supplementary Figures 9-10 use a separate Python 3.9 environment:
+Download the example observations and pretrained model from
+[Zenodo (DOI: 10.5281/zenodo.24165471)](https://doi.org/10.5281/zenodo.24165471).
+The observations are preprocessed sample/background amplitudes and phases,
+with illumination coordinates.
 
-```bash
-conda create -n depict-tracking python=3.9
-conda activate depict-tracking
-python -m pip install -r Figures/Figure4_Supplementary_Figure_9_10/requirements.txt
-```
+| Archive | Contents | Location in this repository |
+| --- | --- | --- |
+| `DEPICT_models.tar` | Pretrained diffusion model | `models/` |
+| `293t_commercial.tar` | HEK293T observations | `complex_field/293t_commercial/` |
+| `hela_commercial.tar` | HeLa observations | `complex_field/hela_commercial/` |
+| `cos7_commercial.tar` | COS7 observations | `complex_field/cos7_commercial/` |
+| `u2os_commercial.tar` | U2OS observations | `complex_field/u2os_commercial/` |
+| `T_cell.tar` | Interphase and mitotic T-cell observations | `complex_field/T_cell/` |
 
-LapTrack requires `scikit-image==0.19.3` in this environment; volumetric
-postprocessing uses `scikit-image==0.24.0`. Keep these environments separate.
-
-Component-specific dependency files are also available in
-`figure_reproduction/`, `postprocessing/` and the relevant figure directories.
-
-## Data And Models
-
-Observation arrays, checkpoints and volume/image assets are separate from the
-source repository. Place observations in `complex_field/`, model weights in
-`models/`, and figure inputs under `Figures/`, preserving their configured
-relative paths. See [Data and models](docs/data.md) for layouts, array shapes
-and input requirements. Public download repositories have not yet been
-assigned.
-
-## Reconstruction
-
-Preview the six-sample, two-angle-count batch and check inputs:
-
-```bash
-conda activate depict
-DRY_RUN=1 bash scripts/solve_adam_reddiff_tri_resample_angle_group_grid_search.sh
-```
-
-Reconstruct one sample with 24 angles on GPU 0:
-
-```bash
-SAMPLES=293t ANGLE_GROUPS=24 GPUS=0 bash scripts/solve_adam_reddiff_tri_resample_angle_group_grid_search.sh
-```
-
-Select samples, GPUs and angle counts through environment variables. Results
-are written under `results/` and logs under `log/` by default. See
-[Reconstruction](docs/reconstruction.md) for sample configurations, observation
-selection, optimization settings and Slurm usage.
-
-## Figure Reproduction
-
-Run figure entry points from the `DEPICT` root after installing the figure
-dependencies and restoring their inputs:
-
-```bash
-python Figures/Figure3/rebuild.py
-python Figures/Supplementary_Figure_8/rebuild.py --panels d h
-```
-
-For trajectory analysis, activate `depict-tracking` and run
-`python Figures/Figure4_Supplementary_Figure_9_10/rebuild.py`.
-
-| Component | Documentation |
-| --- | --- |
-| Figure 3: cell volumes and lipid isotropy | [Figure 3](Figures/Figure3/README.md) |
-| Figure 4 d-f and Supplementary Figures 9-10: lipid trajectories | [Trajectory analysis](Figures/Figure4_Supplementary_Figure_9_10/README.md) |
-| Supplementary Figure 6: forward-model comparisons | [Supplementary Figure 6](Figures/Supplementary_Figure_6/README.md) |
-| Supplementary Figure 8: sparse-angle comparisons | [Supplementary Figure 8](Figures/Supplementary_Figure_8/README.md) |
-| Figure 5: volumetric motion and strain | [Figure 5](Figures/Figure5/README.md) |
-| Supplementary Figure 11: motion statistics | [Supplementary Figure 11](Figures/Supplementary_Figure_11/README.md) |
-| Extended Data Figure 3: regional dynamics | [Extended Data Figure 3](Figures/Extended_Data_Figure_3/README.md) |
-
-The [postprocessing guide](postprocessing/README.md) describes the numerical
-methods, configuration schema, cache handling and validation commands. Figure
-5, Supplementary Figure 11 and Extended Data Figure 3 require native time
-series outside this repository; configure their input CSVs before running on a
-new machine.
-
-## Repository Layout
+Extract `DEPICT_models.tar` and place `3_cells_iteration_230000ema.pt` directly
+in `models/`, keeping its filename unchanged.
+Extract the observation archives and place the sample folders in
+`complex_field/`, preserving their directory names and filenames.
+Before running the scripts, the directory layout should be:
 
 ```text
-configs/                 Optical, model, data and reconstruction settings
-src/                     Reconstruction operators and optimization routines
-utils/                   Data loading and image utilities
-scripts/                 Reconstruction batch launcher
-figure_reproduction/     Shared volume rendering and FWHM analysis
-postprocessing/          Kalman, optical flow, masks and strain analysis
-Figures/                 Figure entry points, configurations and small tables
-docs/                    Reconstruction, data and publication guides
+models/
+  3_cells_iteration_230000ema.pt
+complex_field/
+  293t_commercial/241219/
+  hela_commercial/hela_1/
+  cos7_commercial/cos7_1111/
+  u2os_commercial/u2os_1109/
+  T_cell/20260611_0p5_full1910/
+results/
 ```
 
-`manifest/`, `complex_field/`, `results/` and `log/` are local directories
-excluded from GitHub. Model weights, binary figure assets and generated caches
-are excluded as well. See [Publishing](docs/publishing.md) for the code/data
-split and release commands.
+`results/` is initially empty; the scripts create output subdirectories as
+needed. The model path must match `model_dir` in
+`configs/model_config/3_cells_230000ema.yaml`.
 
-## Contributing And Support
+Each acquisition directory contains `sp_amp/`, `sp_phs/`, `bg_amp/`, `bg_phs/`
+and `k_scan/`, with files named `<data_name>.npy`. The amplitude and phase
+arrays have shape `(observations, height, width)`; `k_scan` has shape
+`(observations, 2)`.
 
-Use GitHub issues to report problems. Include the command, Python environment,
-relevant configuration and error output. Changes to numerical methods should
-describe their expected effect and include an appropriate validation case.
+| Sample ID | Cell sample | Data configuration in `configs/isorecon_data_config/` |
+| --- | --- | --- |
+| `293t` | HEK293T | `old_293t_170932.yaml` |
+| `hela` | HeLa | `hela-21-17-21.yaml` |
+| `cos7` | COS7 | `cos7_223610.yaml` |
+| `u2os` | U2OS | `u2os_test.yaml` |
+| `tcell` | Interphase T cell (`sam11_1910`) | `20260611_T_0.5_11.yaml` |
+| `tcell_mitosis` | Mitotic T cell (`sam2_1910`) | `20260611_T_0.5_2.yaml` |
 
-## License
+The four commercial acquisitions contain 240 observations each; the T-cell
+acquisitions contain 1910 each. The default reconstructions use all 240
+commercial observations and the first 240 observations of each T-cell sample.
+The supplied configurations select the spatial crops and optical parameters.
 
-A project license has not yet been selected.
+## 3. Reconstruct The Six Samples
+
+All commands below run from the repository root with the `depict` environment
+active. First validate the input paths, array shapes and crop bounds without
+starting a reconstruction:
+
+```bash
+DRY_RUN=1 bash scripts/run_bpm.sh
+DRY_RUN=1 bash scripts/run_depict.sh
+```
+
+Both checks should report `Dry run complete`. Then run the launchers below;
+`GPUS=0` selects the first GPU. Each launcher computes its initialization
+directly from the observations.
+
+### Rytov And TV-BPM
+
+Run the Rytov initialization followed by TV-regularized BPM optimization:
+
+```bash
+GPUS=0 bash scripts/run_bpm.sh
+```
+
+This saves both the Rytov volume and the final TV-BPM volume for every sample.
+The TV-BPM settings are in
+`configs/reconstruction_config/beam_propagation/TV.yaml`: 200 iterations,
+step size `0.0005`, and TV weight `5e-6`.
+
+### DEPICT
+
+Run the diffusion-prior reconstruction:
+
+```bash
+GPUS=0 bash scripts/run_depict.sh
+```
+
+All six samples use the pretrained model configured in
+`configs/model_config/3_cells_230000ema.yaml`. The launcher selects the optical
+and optimization settings for each sample.
+
+### Select Samples And GPUs
+
+Both launchers accept `SAMPLES` and `GPUS` as space-separated lists. For
+example, reconstruct only HEK293T with all three methods:
+
+```bash
+SAMPLES=293t GPUS=0 bash scripts/run_bpm.sh
+SAMPLES=293t GPUS=0 bash scripts/run_depict.sh
+```
+
+To distribute all six samples across several GPUs:
+
+```bash
+GPUS="0 1 2" bash scripts/run_bpm.sh
+GPUS="0 1 2" bash scripts/run_depict.sh
+```
+
+Each launcher runs at most one job per listed GPU, waits for all jobs to
+finish, and reports any failures. Set `LOG_DIR` to choose a log directory.
+
+DEPICT also supports 24-observation reconstructions:
+
+```bash
+ANGLE_GROUPS=24 GPUS=0 bash scripts/run_depict.sh
+```
+
+## Outputs
+
+Results are saved under `results/`, following each data configuration's
+`expriment_name`, `save_name`, and `data_name`. The volumes store refractive-index
+contrast, `delta_n = n - n_medium`, in `(z, x, y)` order.
+The supplied example configurations reconstruct volumes of shape
+`(256, 500, 500)`.
+
+| Method | Output relative to `results/<expriment_name>/<save_name>/` |
+| --- | --- |
+| Rytov | `<data_name>/rytov.tif` |
+| TV-BPM | `bpm_regu/<data_name>.tif` |
+| DEPICT | `<data_name>/adam_REDdiff_.../<model>/<settings>/<settings>/iso.tif` |
+
+TV-BPM checkpoints (`bpm_regu_step*.tif`) and DEPICT checkpoints (`iso_*.tif`)
+are saved in their parameter directories. Each solver prints its output paths;
+the launchers write per-sample logs under `log/`.
+
+## Use Your Own Measurements
+
+Follow the example array layout, add a data YAML under
+`configs/isorecon_data_config/`, and specify the matching optical parameters
+under `configs/physics_config/`. Paths in YAML files are relative to the
+repository root. For a direct TV-BPM run:
+
+```bash
+python experiment_solve_bpm_clean_style.py \
+    --data_config configs/isorecon_data_config/old_293t_170932.yaml \
+    --physics_config configs/physics_config/commercial_ODT.yaml \
+    --reconstruction_config configs/reconstruction_config/beam_propagation/TV.yaml
+```
+
+Use `python adam_REDDiff_resample_BPM_resample_triplane_angle_group.py --help`
+for the DEPICT solver's arguments. The batch launcher's dry run prints the
+complete command for each example sample.
